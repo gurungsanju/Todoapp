@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todoapp/constants/colors.dart';
+import 'package:todoapp/widgets/todo_item.dart';
 
 class homepage extends StatelessWidget {
   const homepage({super.key});
@@ -35,6 +36,43 @@ class homepage extends StatelessWidget {
        centerTitle: true,
         backgroundColor: tdpurple,
 
+    )
+    ,
+    body: Container(
+      padding:EdgeInsets.symmetric(horizontal: 65,vertical: 25),
+      child: Column(
+        children: [Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+             border: Border.all(
+      color: tdpurple, // your purple color
+      width: 1.5,
+    ),
+          ),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Search',
+              hintStyle: TextStyle(fontSize: 14,color: tddarkpurple),
+              prefixIcon: Icon(Icons.search,color: tddarkpurple,),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.all(12),
+            ),
+
+          ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: tdpurple,
+            borderRadius: BorderRadius.circular(20),
+
+          ),
+        ),
+        ToDoItem(),
+        
+        ],
+        
+      ),
     ));
   }
 }
